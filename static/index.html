@@ -1,0 +1,104 @@
+<html>
+
+<head>
+    <title>Token explorer</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 8px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            --background: #24375b;
+            --foreground: #fff;
+            background: var(--background);
+            color: var(--foreground);
+        }
+
+        .search {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        dialog {
+            width: 50vw;
+            height: 50vh;
+            cursor: initial;
+        }
+
+        dialog h1 {
+            font-size: 24px;
+        }
+
+
+        dialog>form {
+            float: right;
+        }
+
+
+        .monospace {
+            font-family: monospace;
+        }
+
+        .pill {
+            background: var(--foreground);
+            opacity: 0.7;
+            transition: opacity 200ms;
+            color: var(--background);
+            border-radius: 5px;
+            padding: 2px 5px 1px;
+            margin: 1px 5px;
+            font-size: 10px;
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        .pill:hover {
+            opacity: 1;
+        }
+
+        a {
+            cursor: pointer;
+            color: #fff;
+            text-decoration: underline;
+            text-decoration-color: var(--background);
+            transition: text-decoration-color 200ms;
+        }
+
+        a:hover {
+            text-decoration-color: var(--foreground);
+        }
+
+        dialog {
+            background: #24375b;
+            color: #fff;
+            border: none;
+            max-width: 50vw;
+            padding: 20px;
+        }
+
+        dialog>div {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        dialog>div>* {
+            margin: 0;
+        }
+
+        dialog::backdrop {
+            background: #000;
+            opacity: 0.5;
+        }
+
+        .selected {
+            background: #3c6fc2;
+        }
+    </style>
+</head>
+
+<body>
+    <script src="/tokex.js"></script>
+</body>
+
+</html>
