@@ -1,7 +1,7 @@
 const { cpSync, rmSync } = require('fs');
 const path = require('path');
 
-rmSync("./dist", { recursive: true });
+rmSync("./dist", { recursive: true, force: true });
 cpSync("./static", "./dist", { recursive: true });
 
 module.exports = [
