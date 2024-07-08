@@ -62,10 +62,8 @@ export default function home() {
             search$.if(
                 search$.to(searchInfo),
                 [
-                    div(idLink("f3a7a81307b8c445782cf75422bd8a335329fd5e36859b4d28e377e27356202a", "Example transaction")),
-                    div(idLink("f45b3688712eb6fc84c18989c4f31df21e1e850663bfc723f133ca01c0201a6e", "Example trade")),
-                    div(idLink("890ce3d6b7bf368acd723ddb818b5678d64ac22f66eb9526a69e8b93cae74311", "Example Entity contract")),
-                    div(idLink("3dbda19bf8e152736455531033ddb7399ea066423127bb6fa3bd25be4c419db2"), "Example rejection"),
+                    div(idLink("1f498019fdd54754e4c6f940a4f39b4b704732b05ae53548bb39318bd9984107", "Example transaction")),
+                    div(idLink("702c650ee3cde489f3c986e8f7d5ea41b0ff41bc0a7153e2199138e1fb20dbe4", "Example contract")),
                 ]
             )
         )
