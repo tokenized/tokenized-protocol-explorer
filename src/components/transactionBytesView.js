@@ -49,6 +49,9 @@ function simpleValueView(type, value) {
         return idLink(hexByteReverse(value));
     }
     if (type.typeName == "Timestamp") {
+        if (value == 0) {
+            return '-';
+        }
         return `${new Date(value / 1e6).toISOString().replace('T', ' ')}`;
     }
     if (value instanceof Uint8Array && value.length <= 4) {
