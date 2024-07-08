@@ -14,7 +14,10 @@ async function addrInformation(address) {
     try {
         let transaction = parseTransaction(transactionBytes);
         let tokenized = transaction.outputs.map(({ script }) => decodeOutputScript(script)?.content).find(content => content instanceof TokenizedAction);
-        return tokenized?.description ? ` - ${tokenized.description}` : '';
+        if (tokenized?.actionCode == "C1") {
+            return tokenized?.description ? ` - ${tokenized.description}` : '';
+        }
+        return '';
     } catch (e) {
         // never mind
     }
