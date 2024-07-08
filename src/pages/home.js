@@ -1,5 +1,5 @@
 import { hexToBytes } from "@noble/hashes/utils";
-import { classList, Data, HTML, value } from "ui-io";
+import { attr, classList, Data, HTML, value } from "ui-io";
 import { base58ToBuffer } from "../chain/address.js";
 import { parseTransaction } from "../chain/transaction.js";
 import { addrLink } from "../links/addr.js";
@@ -7,7 +7,7 @@ import { idLink } from "../links/id.js";
 import { txLink } from "../links/tx.js";
 import { getTxBytes } from "../network.js";
 import { hexByteReverse } from "./id.js";
-const { div, h1, input } = HTML(document);
+const { div, h1, input, a, p } = HTML(document);
 
 function searchIdLink(searchText) {
     if (searchText.length != 64) return null;
@@ -56,7 +56,7 @@ export default function home() {
     let search$ = new Data("");
     return [
         h1("Tokenized Protocol Explorer"),
-        div(
+        p(
             classList("search"), 
             input(value(search$)),
             search$.if(
@@ -66,7 +66,8 @@ export default function home() {
                     div(idLink("702c650ee3cde489f3c986e8f7d5ea41b0ff41bc0a7153e2199138e1fb20dbe4", "Example contract")),
                 ]
             )
-        )
+        ),
+        p(a(attr({"href": "https://decode.tokenized.com"}), "https://decode.tokenized.com"), ' - ', globalThis.VERSION),
 
     ];
 }

@@ -1,5 +1,7 @@
 const { cpSync, rmSync } = require('fs');
 const path = require('path');
+const { version } = require("./package.json");
+const { DefinePlugin } = require('webpack');
 
 rmSync("./dist", { recursive: true, force: true });
 cpSync("./static", "./dist", { recursive: true });
@@ -32,6 +34,11 @@ module.exports = [
                     },
                 },
             ]
-        }
+        },
+        plugins: [
+            new DefinePlugin({
+                'globalThis.VERSION': JSON.stringify(version),
+            })
+        ]
     }
 ];
